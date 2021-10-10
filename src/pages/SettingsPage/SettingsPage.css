@@ -1,0 +1,76 @@
+p {
+    font-size: 13px;
+}
+.indent_div {
+    margin-left: calc(100vw - 90vw);
+}
+.settings_header {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.settings_header-helper {
+    font-size: 13px;
+    color: var(--blue-grey-500);
+    margin-top: 8px;
+}
+.row-composition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.form_btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.time_input {
+    text-align: center;
+    width: 52px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.btn-init {
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.btn-init:nth-child(1) {
+    margin-right: 8px;
+}
+
+div.indent_div div.formInput_box:nth-last-child(3) {
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 480px) {
+    .indent_div {
+        margin-left: 16px;
+    }
+    .form_btns {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .btn-init {
+        font-size: 13px;
+        width: 288px;
+        height: 36px;
+        font-family: 'YS Text', serif;
+        justify-content: center;
+    }
+    button.yellow_btn {
+        margin-bottom: 12px;
+    }
+}

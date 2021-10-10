@@ -1,0 +1,31 @@
+.default_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    /*margin-left: 380px;*/
+    /*margin-right: 380px;*/
+}
+
+#default_icon {
+    margin-bottom: 32px;
+}
+
+.default_p {
+    height: 32px;
+    width: 264px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.btn_init {
+    width: 123px;
+    height: 36px;
+}
+
+@media screen and (max-width: 480px) {
+    .default_p {
+        width: 288px;
+    }
+}
+

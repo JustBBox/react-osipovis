@@ -1,0 +1,32 @@
+.red {
+    color: red;
+}
+label p:nth-child(1) {
+    float: left;
+}
+.formInput_box {
+    display: flex;
+    flex-direction: column;
+}
+.formInput_label {
+    font-family: 'YS Text', serif;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+.formInput_control {
+    font-family: 'YS Text', serif;
+    font-size: 13px;
+    width: 474px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .formInput_control {
+        width: 288px;
+    }
+}
