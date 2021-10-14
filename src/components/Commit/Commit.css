@@ -1,11 +1,7 @@
-/*.content {*/
-/*    justify-content: flex-start;*/
-/*}*/
 .container_commit {
     box-sizing:border-box;
     padding: 12px 24px 12px 56px;
-    width:calc(100vw - 20vw);
-    min-width: 824px;
+    width:calc(100vw - 200px);
     height: 68px;
     margin-top: 8px;
     margin-right: 100px;
@@ -52,11 +48,9 @@
     display: flex;
     align-items: center;
 }
-/*p {*/
-/*    text-align: justify;*/
-/*    -moz-text-align-last: justify;*/
-/*    text-align-last: justify;*/
-/*}*/
+.user_span {
+    display: flex;
+}
 .time_icon_grid {
     margin: 0 4px 0 0;
     opacity: 0.35;
@@ -107,10 +101,6 @@
 .trunk {
     margin: 0;
 }
-/*.trunk_icon {*/
-/*    margin-top: 0;*/
-/*    margin-bottom: 16px;*/
-/*}*/
 .commit_icon {
 
 }
@@ -121,6 +111,7 @@ svg {
     color:#00B341;
     line-height: 20px;
     font-size: 18px;
+    font-weight: 500;
     float: left;
     margin: 0 4px 0 0;
 }
@@ -144,6 +135,7 @@ svg {
 .commit_message_bottom_block_nested {
     margin: 0 4px 0 0;
     font-size: 13px;
+    font-weight: 400;
     line-height: 16px;
 }
 .hashCommit {
@@ -157,49 +149,91 @@ svg {
     background: #F0F2F3;
 }
 @media screen and (max-width: 480px) {
-    .show {
-        display: block;
-        align-self: center;
-    }
-
-    .grid_right_block {
-        display: inline-flex;
-        flex-direction: row;
-        margin-left: 16px;
-        align-self: center;
-        align-items: center;
-    }
-
-    .one_row {
-        margin-right: 8px;
-    }
-
     .trunk {
         margin: auto;
     }
-
-    .trunk_icon {
-        margin: 6px;
+    .commit_message_tag {
+        color:#00B341;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        float: left;
+        margin-bottom: 8px;
     }
+    .commit_message {
+        font-size: 15px;
+        line-height: 20px;
+        word-break: break-word;
+    }
+    .container_commit {
 
-    .container_grid {
-        width: 288px;
-        height: 177px;
-        display: flex;
-        flex-direction: column;
-        /*grid-template: repeat(6,34px) / repeat(8, 1fr);*/
-        /*grid-template-areas:*/
-        /*    "c c c c c c d d"*/
-        /*    "c c c c c c d d"*/
-        /*    "c c c c c c d d"*/
-        /*    "c c c c c c d d"*/
-        /*    "m m m m m m d d";*/
-        /*!*width: calc(100vw - 200px);*!*/
+        min-width: 288px;
+        width: calc(100vw - 32px);
+        height: fit-content;
+        box-sizing: border-box;
+        padding: 16px 12px 16px 36px;
+        display: grid;
+        grid-template-rows: repeat(4, fit-content(100%));
+        grid-template-columns: repeat(1, auto);
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
         margin-top: 8px;
         margin-right: 16px;
         margin-left: 16px;
         background: #FFFFFF;
         box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
         border-radius: 6px;
+    }
+    .grid_top_icon {
+        position: absolute;
+        top: 16.9px;
+        left: 12.9px;
+        max-width: 14px;
+        max-height: 14px;
+    }
+    .grid_left_block {
+        height: fit-content;
+    }
+    .grid_top_left {
+        grid-area: a;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-bottom: 8px;
+    }
+    .grid_left_bottom_block {
+        height: fit-content;
+        grid-area: b;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .user_span {
+        margin-top: 8px;
+    }
+    .show {
+        display: block;
+        align-self: center;
+        grid-area: c;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .grid_right_block {
+        grid-area: d;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .one_row {
+        margin-right: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .date_row {
+        margin-bottom: 0;
     }
 }

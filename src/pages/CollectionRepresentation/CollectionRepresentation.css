@@ -21,8 +21,7 @@
         justify-content: center;
     }
     .btn_more {
-        margin-left: 16px;
-        margin-right: 16px;
-        width: calc(100vw - 20vw);
+        margin: 8px 16px 16px 16px;
+        width: calc(100vw - 32px);
     }
 }

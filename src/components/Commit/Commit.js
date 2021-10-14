@@ -23,20 +23,21 @@ function Commit(props) {
             </div>
             <div className="grid_left_block">
                 <StatusIcon status={props.data.status} className="grid_top_icon"/>
-                {/*<Approved className="grid_top_icon"/>*/}
                 <div className="grid_top_left">
                     <p className="commit_message_tag">{props.data.id}</p>
                     <p className="commit_message">{props.data.message}</p>
                 </div>
             </div>
             <div className="grid_left_bottom_block">
-                <TimeIcon className="time_icon_grid"/>
                 <span className="commit_message_bottom_block">
+                        <TimeIcon className="time_icon_grid"/>
                         <p className="commit_message_bottom_block_nested">{props.data.branch}</p>
                         <p className="commit_message_bottom_block_nested hashCommit">{props.data.commitHash}</p>
-                    </span>
-                <UserIcon className="time_icon_grid"/>
-                <p className="commit_message_bottom_block">{props.data.author}</p>
+                </span>
+                <span className="user_span">
+                    <UserIcon className="time_icon_grid"/>
+                    <p className="commit_message_bottom_block">{props.data.author}</p>
+                </span>
             </div>
             <div className="show"/>
         </div>

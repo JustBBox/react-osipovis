@@ -10,7 +10,7 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
-    margin-left: calc(100vw - 90vw);
+    margin-left: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #7F8285;
@@ -39,7 +39,7 @@
     line-height: 28px;
 }
 .settings_btn {
-    margin-right: calc(100vw - 90vw);
+    margin-right: 100px;
 }
 .container_link {
     display: flex;
@@ -76,5 +76,8 @@
     }
     .settings_p {
         display: none;
+    }
+    .settings_btn {
+        margin-right: 16px;
     }
 }
