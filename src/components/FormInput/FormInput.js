@@ -1,5 +1,5 @@
 import './FormInput.css';
-import MaskedInput from 'react-text-mask'
+import MaskedInput from 'react-input-mask'
 // import Button from '../../components/Button/Button';
 // import {
 //     Link
@@ -15,10 +15,13 @@ function FormInput(props) {
                     props.important && <p color="red"> *</p>
                 </label>
                 <MaskedInput
+                    name={props.name}
+                    type="search"
                     mask={props.mask}
                     className="formInput_control"
                     placeholder={props.placeholder}
                     id={id_}
+                    value={props.value}
                 />
             </div>
         );
@@ -32,9 +35,12 @@ function FormInput(props) {
                     </label>
                 </div>
                 <input
-                    type="text"
+                    name={props.name}
+                    type={props.type || "text"}
                     className="formInput_control"
                     placeholder={props.placeholder}
+                    onChange={props?.cb}
+                    value={props.value}
                     id={id_}
                 />
             </div>

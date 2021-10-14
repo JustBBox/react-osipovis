@@ -2,7 +2,7 @@
 button.yellow_btn {
     font-family: 'YS Text', serif;
     background: #FFCC00;
-    border: 1px solid #FFCC00;
+    border: 2px solid #FFCC00;
     box-sizing: border-box;
     border-radius: 4px;
     transition: background-color 2s;
@@ -10,7 +10,7 @@ button.yellow_btn {
 button.yellow_btn:disabled {
     cursor: default;
     background: #F2F2F2;
-    border: 1px solid #F2F2F2;
+    border: 2px solid #F2F2F2;
     border-radius: 4px;
     transition: background-color 2s;
 }
@@ -32,7 +32,7 @@ button.yellow_btn:enabled {
 /* Generic Active Yandex Button Grey*/
 button.grey_btn {
     background: #E6E6E6;
-    border: 1px solid #E6E6E6;
+    border: 2px solid #E6E6E6;
     box-sizing: border-box;
     border-radius: 4px;
     transition: background-color 2s;
@@ -40,7 +40,7 @@ button.grey_btn {
 button.grey_btn:disabled {
     cursor: default;
     background: #DBDBDB;
-    border: 1px solid #DBDBDB;
+    border: 2px solid #DBDBDB;
     border-radius: 4px;
     transition: background-color 2s;
 }

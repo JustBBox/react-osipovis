@@ -70,7 +70,7 @@ div.indent_div div.formInput_box:nth-last-child(3) {
         font-family: 'YS Text', serif;
         justify-content: center;
     }
-    button.yellow_btn {
+    button#submit_btn {
         margin-bottom: 12px;
     }
 }

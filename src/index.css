@@ -11,6 +11,6 @@ body {
   --color-bg-control: #E6E6E6;
 }
 
-span label div p {
+span, label, div, p {
   font-family: 'YS Text', serif;
 }

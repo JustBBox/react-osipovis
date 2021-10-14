@@ -1,0 +1,205 @@
+/*.content {*/
+/*    justify-content: flex-start;*/
+/*}*/
+.container_commit {
+    box-sizing:border-box;
+    padding: 12px 24px 12px 56px;
+    width:calc(100vw - 20vw);
+    min-width: 824px;
+    height: 68px;
+    margin-top: 8px;
+    margin-right: 100px;
+    margin-left: 100px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+.container_commit:hover {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 2px 8px rgba(67, 68, 69, 0.3);
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+.grid_left_block {
+    /*display: flex;*/
+}
+.grid_left_bottom_block {
+    overflow: hidden;
+    display: inline-flex;
+    /*align-items: center;*/
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 12px;
+}
+.grid_right_block {
+    opacity: 0.7;
+    width: 110px;
+    font-size: 13px;
+    float: right;
+}
+.grid_top_icon {
+    position: absolute;
+    top: 13.34px;
+    left: 25.34px;
+    max-width: 24px;
+    max-height: 24px;
+}
+.grid_top_left {
+    display: flex;
+    align-items: center;
+}
+/*p {*/
+/*    text-align: justify;*/
+/*    -moz-text-align-last: justify;*/
+/*    text-align-last: justify;*/
+/*}*/
+.time_icon_grid {
+    margin: 0 4px 0 0;
+    opacity: 0.35;
+}
+.commit_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100vw - 200px);
+    margin-top: 8px;
+    /*margin-right: 100px;*/
+    /*margin-left: 100px;*/
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
+    border-radius: 6px;
+}
+
+.commit_block_main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+.commit_block_time {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.one_row {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 13px;
+    line-height: 16px;
+}
+.date_row {
+    margin-bottom: 12px;
+}
+.time_icon {
+    margin-right: 5px;
+    opacity: 0.65;
+    width: 13.95px;
+    height: 16px;
+}
+.trunk {
+    margin: 0;
+}
+/*.trunk_icon {*/
+/*    margin-top: 0;*/
+/*    margin-bottom: 16px;*/
+/*}*/
+.commit_icon {
+
+}
+svg {
+    margin: 0;
+}
+.commit_message_tag {
+    color:#00B341;
+    line-height: 20px;
+    font-size: 18px;
+    float: left;
+    margin: 0 4px 0 0;
+}
+.commit_message_ {
+    font-size: 15px;
+}
+
+.commit_message {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0 4px 0 0;
+}
+
+.commit_message_bottom_block {
+    display: flex;
+    font-size: 13px;
+    line-height: 16px;
+    white-space: break-spaces;
+    margin: 0;
+}
+.commit_message_bottom_block_nested {
+    margin: 0 4px 0 0;
+    font-size: 13px;
+    line-height: 16px;
+}
+.hashCommit {
+    color: #000000;
+    opacity: 0.65;
+}
+.show {
+    display: none;
+    width: 245px;
+    height: 1px;
+    background: #F0F2F3;
+}
+@media screen and (max-width: 480px) {
+    .show {
+        display: block;
+        align-self: center;
+    }
+
+    .grid_right_block {
+        display: inline-flex;
+        flex-direction: row;
+        margin-left: 16px;
+        align-self: center;
+        align-items: center;
+    }
+
+    .one_row {
+        margin-right: 8px;
+    }
+
+    .trunk {
+        margin: auto;
+    }
+
+    .trunk_icon {
+        margin: 6px;
+    }
+
+    .container_grid {
+        width: 288px;
+        height: 177px;
+        display: flex;
+        flex-direction: column;
+        /*grid-template: repeat(6,34px) / repeat(8, 1fr);*/
+        /*grid-template-areas:*/
+        /*    "c c c c c c d d"*/
+        /*    "c c c c c c d d"*/
+        /*    "c c c c c c d d"*/
+        /*    "c c c c c c d d"*/
+        /*    "m m m m m m d d";*/
+        /*!*width: calc(100vw - 200px);*!*/
+        margin-top: 8px;
+        margin-right: 16px;
+        margin-left: 16px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
+        border-radius: 6px;
+    }
+}

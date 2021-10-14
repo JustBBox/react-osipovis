@@ -1,0 +1,89 @@
+.modal {
+    /*display: none; !* Hidden by default *!*/
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal_content {
+    display: flex;
+    flex-direction:column;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    /*margin-top: -94px;*/
+    /*margin-left: -257px;*/
+    /*margin: auto;*/
+    padding: 0;
+    max-width: 100%;
+    width: fit-content;
+    background-color: #fefefe;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 6px 16px rgba(67, 68, 69, 0.3);
+    border-radius: 4px;
+}
+.modal_header {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 22px;
+}
+.indent_modal_div {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.input_label {
+    font-size: 13px;
+    line-height: 18px;
+}
+.form_btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.btn-init {
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.btn-init:nth-child(1) {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .modal_content {
+        display: flex;
+        flex-direction:column;
+        position: absolute;
+        left: 0;
+        padding: 0;
+        max-width: 100%;
+        width: fit-content;
+        background-color: #fefefe;
+        box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 6px 16px rgba(67, 68, 69, 0.3);
+        border-radius: 4px;
+    }
+    .form_btns {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .btn-init {
+        font-size: 13px;
+        width: 288px;
+        height: 36px;
+        font-family: 'YS Text', serif;
+        justify-content: center;
+    }
+}

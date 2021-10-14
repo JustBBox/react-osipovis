@@ -1,6 +1,7 @@
 import './Footer.css';
 
 function Footer() {
+    console.log('RENDERED APP');
     return (
         <div className="footer">
             <div className="footer_menu">

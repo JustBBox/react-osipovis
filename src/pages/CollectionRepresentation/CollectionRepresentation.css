@@ -1,0 +1,28 @@
+.content_collection {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.btn_more {
+    min-width: 92px;
+    font-size: 13px;
+    line-height: 28px;
+    margin-left: 100px;
+    margin-top: 8px;
+    align-self: flex-start;
+}
+@media screen and (max-width: 480px) {
+    .content_collection {
+        display: block;
+        min-height: calc(100vh - 120px);
+        align-items: center;
+        justify-content: center;
+    }
+    .btn_more {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: calc(100vw - 20vw);
+    }
+}

@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import AppContext from './app-context';
+
 import Header from './components/Header/Header';
 import InitRepository from './pages/InitRepository/InitRepository';
 import SettingsPage from "./pages/SettingsPage/SettingsPage";
+import CollectionRepresentation from "./pages/CollectionRepresentation/CollectionRepresentation";
+
 import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -9,35 +13,60 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
+import { store } from "./store";
+import Modal from "./components/Modal/Modal";
+
+export const DEFAULT_STATE = {
+    path: '/',
+    repo: 'School CI server',
+    buildCommands: 'npm ci && npm run build',
+    mainBranch: 'master',
+    syncTime: 10,
+    show: false,
+    commits: []
+};
 
 class App extends Component {
+
     constructor(props) {
         super(props);
-        this.handleRoute = this.handleRoute.bind(this);
-        this.state = {
-            path: '/',
-        };
+
+        this.handleState = this.handleState.bind(this);
+
+        this.state = Object.assign(DEFAULT_STATE);
+        this.state.handleState = this.handleState;
     }
-    handleRoute(path) {
-        const { value, name } = path;
-        this.setState({ [name]: value });
+
+    handleState(name, value) {
+        if(name === 'commits') {
+            //Mock data injected to the App state
+            value['commits'] = store;
+            this.setState(value)
+        } else {
+            this.setState({[name]: value});
+        }
     }
+
     render() {
+        console.log('RENDERED APP')
         return (
             <Router>
+                <AppContext.Provider value={this.state} >
                 <div className="App">
-                    <Header titleText="School CI server"/>
+                    <Header handleState={this.handleState} titleText={this.state.repo}/>
                     <div className="container">
+                        {/*<Modal/>*/}
                         <Switch>
-                            <Route exact path="/" render={(props) => <InitRepository {...props} handleRoute={this.handleRoute} />}/>
+                            <Route exact path="/" component={this.state.commits.length === 0 ? InitRepository : CollectionRepresentation}/>
                             <Route path="/settings" component={SettingsPage}/>
                         </Switch>
                     </div>
+                    <Modal onClose={() => this.handleState('show', false)} show={this.state.show}/>
                     <Footer/>
                 </div>
+                </AppContext.Provider>
             </Router>
         );
     }
