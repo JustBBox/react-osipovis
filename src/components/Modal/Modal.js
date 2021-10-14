@@ -12,7 +12,15 @@ function Modal(props) {
         if((e.charCode || e.keyCode) === 27) {
             props.onClose();
         }
+
     }
+
+    useEffect(() => {
+        document.body.addEventListener('keydown', closeOnEscapeKeyDown)
+        return function cleanup() {
+            document.body.removeEventListener('keydown', closeOnEscapeKeyDown)
+        }
+    }, [])
 
     const handleChange = (e) => {
         e.preventDefault();
