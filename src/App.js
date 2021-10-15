@@ -56,7 +56,6 @@ class App extends Component {
                 <div className="App">
                     <Header handleState={this.handleState} titleText={this.state.repo}/>
                     <div className="container">
-                        {/*<Modal/>*/}
                         <Switch>
                             <Route exact path="/" component={this.state.commits.length === 0 || this.state.repo === DEFAULT_STATE.repo ? InitRepository : CollectionRepresentation}/>
                             <Route path="/settings" component={SettingsPage}/>
