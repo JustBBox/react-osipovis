@@ -9,9 +9,7 @@ import AppContext from '../../app-context';
 import Button from "../../components/Button/Button";
 
 function CollectionRepresentation(props) {
-    console.log('COLLECTION RENDERED')
     const { commits } = useContext(AppContext);
-    console.log(commits);
     const commitsList = commits.map((value) =>
         <Commit data={value} key={value.commitHash}></Commit>
     );

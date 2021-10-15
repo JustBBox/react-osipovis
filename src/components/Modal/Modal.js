@@ -16,6 +16,11 @@ function Modal(props) {
 
     }
 
+    // Пояснения по поводу второго аргумента useEffect
+    // If you want to run an effect and clean it up only once (on mount and unmount), you can pass
+    // an empty array ([]) as a second argument. This tells React that your effect doesn’t depend on
+    // any values from props or state, so it never needs to re-run. This isn’t handled as a special case
+    // — it follows directly from how the dependencies array always works.
     useEffect(() => {
         document.body.addEventListener('keydown', closeOnEscapeKeyDown)
         return function cleanup() {

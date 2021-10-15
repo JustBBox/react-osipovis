@@ -1,18 +1,22 @@
-# 23:18 14.10.2021
-Вёрстка комита под мобильные в процессе.<br>
-MaskedInput не настроены.
+# 15.10.2021
+Первая задача выполнена. Любые советы, что почитать, что улучшить, где<br>
+явное непонимание или неправильное использование пиши в тикете и/или в телеграм.
 
-There is no working solution in this project at the moment.<br>
 I'll update that status on 15.10.2021 . Stay tuned for any additional information.<br>
 As cross-testing executor you could contact me in telegram: [Telegram Direct Link](https://t.me/EightBitBox) <br>
 Sorry for the delay in completing this task.
 
+## Для проверки используй следующие скрипы
+###Установи зависимости:
+#### `npm i`
+
+### Запусти сервер с реактом:
+#### `npm start`
+
 # Getting Started with CI Server React App
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-## For the testing purposes  use
 
-### `npm start`
 
 ## Available Scripts
 

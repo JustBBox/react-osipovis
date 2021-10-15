@@ -15,6 +15,7 @@ class SettingsPage extends React.Component {
         this.state = Object.assign(DEFAULT_STATE);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.repoCheck = new RegExp(`(^[A-Za-z][A-Za-z0-9-]*[\\/][A-Za-z][A-Za-z0-9-]*)`)
     }
 
     componentDidMount() {
@@ -25,11 +26,11 @@ class SettingsPage extends React.Component {
             }
             this.setState({...clone});
         }
+        this.setState({disabled: true})
     }
 
     componentWillUnmount() {
         if(this.state.repo.trim() === '') {
-            console.log('please only on exit from settings');
             this.context.handleState('repo', DEFAULT_STATE.repo)
         }
     }
@@ -55,14 +56,40 @@ class SettingsPage extends React.Component {
     }
 
     handleSubmit(event) {
-        this.props.history.push('/');
-        this.context.handleState('commits', this.state);
-        event.preventDefault();
+        if(this.repoCheck.test(this.state.repo) || this.state.buildCommands.trim() === '') {
+            setTimeout(() => {
+                this.props.history.push('/');
+                this.context.handleState('commits', this.state);
+            }, 1500);
+            this.setState({disabled: true});
+            document.getElementById('cancel_btn').disabled = true;
+            event.preventDefault();
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const repositoryInput = document.getElementById('MaskedInput1');
+        let failed = document.getElementById('MaskedInput1').value.trim() === '' || this.state.buildCommands.trim() === '';
+        if(document.activeElement === repositoryInput) {
+            if (this.repoCheck.test(this.state.repo)) {
+                repositoryInput.style.background = '#FFFFFF';
+            } else {
+                failed = true;
+                repositoryInput.style.background = '#c0000042';
+            }
+        }
+
+        if(prevState.repo !== this.state.repo || prevState.buildCommands !== this.state.buildCommands) {
+            if(failed) {
+                this.setState({disabled: true})
+            } else {
+                this.setState({disabled: false})
+            }
+        }
     }
 
     render(props)
     {
-        console.log('RENDERED SETTINGS PAGE');
         const cb = () => this.context.handleState('path', '/');
         return (
             <form onSubmit={this.handleSubmit}>
@@ -82,9 +109,9 @@ class SettingsPage extends React.Component {
                         <p>minutes</p>
                     </div>
                     <div className="form_btns">
-                        <Button type="submit" btnClass="btn-init yellow_btn" id="submit_btn">Save</Button>
+                        <Button type="submit" btnClass="btn-init yellow_btn" id="submit_btn" disabled={this.state.disabled}>Save</Button>
                         <Link className="unlink container_link" to="/">
-                            <Button btnClass="btn-init grey_btn" method={cb}>Cancel</Button>
+                            <Button btnClass="btn-init grey_btn" method={cb} id="cancel_btn">Cancel</Button>
                         </Link>
                     </div>
                 </div>

@@ -7,7 +7,6 @@ const AppContext = React.createContext({
     mainBranch: '',
     syncTime: 10,
     setPath: (value) => {
-        console.log(this);
         this.path = value || window.location.pathname
         return value;
     }

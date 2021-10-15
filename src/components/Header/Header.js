@@ -20,7 +20,6 @@ function Header(props) {
         <div className="header">
             <AppContext.Consumer>
                 {(context) => {
-                    console.log('RENDER HEADER: ', context.repo, ' ', new Date().toTimeString());
                     const spanStyle = context.repo !== 'School CI server' ? 'settings_p display_none' : 'settings_p';
                     if (window.location.pathname !== '/settings') {
 

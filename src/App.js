@@ -50,7 +50,6 @@ class App extends Component {
     }
 
     render() {
-        console.log('RENDERED APP')
         return (
             <Router>
                 <AppContext.Provider value={this.state} >
