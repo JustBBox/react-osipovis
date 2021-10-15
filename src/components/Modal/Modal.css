@@ -2,7 +2,6 @@
     /*display: none; !* Hidden by default *!*/
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -15,10 +14,10 @@
     display: flex;
     flex-direction:column;
     position: relative;
-    top: 25%;
-    left: 25%;
-    /*margin-top: -94px;*/
-    /*margin-left: -257px;*/
+    top: 50%;
+    left: 50%;
+    margin-top: -94px;
+    margin-left: -257px;
     /*margin: auto;*/
     padding: 0;
     max-width: 100%;
@@ -66,8 +65,10 @@
         display: flex;
         flex-direction:column;
         position: absolute;
-        left: 0;
-        padding: 0;
+        top: 50%;
+        left: 50%;
+        margin-top: -115px;
+        margin-left: -160px;
         max-width: 100%;
         width: fit-content;
         background-color: #fefefe;

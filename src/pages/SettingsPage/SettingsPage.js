@@ -8,11 +8,30 @@ import React from "react";
 import AppContext from '../../app-context';
 
 class SettingsPage extends React.Component {
+    static contextType = AppContext;
+
     constructor(props) {
         super(props)
         this.state = Object.assign(DEFAULT_STATE);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        if(this.state.repo === DEFAULT_STATE.repo) {
+            let clone = {...this.context};
+            if (clone.repo === DEFAULT_STATE.repo) {
+                clone.repo = '';
+            }
+            this.setState({...clone});
+        }
+    }
+
+    componentWillUnmount() {
+        if(this.state.repo.trim() === '') {
+            console.log('please only on exit from settings');
+            this.context.handleState('repo', DEFAULT_STATE.repo)
+        }
     }
 
     handleChange(event) {
@@ -52,7 +71,7 @@ class SettingsPage extends React.Component {
                     <p className="settings_header-helper">Configure repository connection and synchronization
                         settings.</p>
                     <FormInput name="repo" mask={false} labelText="GitHub repository" important={true} placeholder="user-name/repo-name"
-                               uniqueHash="1"  cb={this.handleChange}/>
+                               uniqueHash="1" value={this.state.repo} cb={this.handleChange}/>
                     <FormInput name="buildCommands" mask={false}  labelText="Build command" important={true} placeholder="npm ci && npm run build"
                                uniqueHash="2" value={this.state.buildCommands} cb={this.handleChange} type="search"/>
                     <FormInput name="mainBranch" mask={false}  labelText="Main branch" important={false} placeholder="master |" uniqueHash="3"
@@ -73,7 +92,5 @@ class SettingsPage extends React.Component {
         );
     }
 }
-
-SettingsPage.contextType = AppContext;
 
 export default SettingsPage;

@@ -38,12 +38,12 @@ function Header(props) {
                                 <h2 className={context.repo === DEFAULT_STATE.repo ? "title" : "title title_changed"}>{context.repo}</h2>
                                 <div className="btns_container">
                                     {buildComponent}
-                                    <Button btnClass="settings_btn grey_btn" method={redirectTo}>
-                                        <Link className="unlink container_link" to="/settings">
+                                    <Link className="unlink container_link" to="/settings">
+                                        <Button btnClass="settings_btn grey_btn" method={redirectTo}>
                                             <Cog className="settings-icon"/>
                                             <span className={spanStyle}>Settings</span>
-                                        </Link>
-                                    </Button>
+                                        </Button>
+                                    </Link>
                                 </div>
                             </>
                         )

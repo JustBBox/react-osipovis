@@ -2,7 +2,7 @@ p {
     font-size: 13px;
 }
 .indent_div {
-    margin-left: calc(100vw - 90vw);
+    margin-left: 100px;
 }
 .settings_header {
     font-size: 15px;

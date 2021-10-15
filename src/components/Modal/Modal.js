@@ -3,6 +3,7 @@ import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import ReactDOM from "react-dom";
 
 function Modal(props) {
     const [commitHash, setCommitHash] = useState('');
@@ -33,12 +34,12 @@ function Modal(props) {
     }
 
     if(props.commitHash) setCommitHash(props.commitHash);
-    return (
+    return ReactDOM.createPortal(
         <div className="modal" onClick={props.onClose}>
             <div className="modal_content" onClick={e => e.stopPropagation()}>
                 <form onSubmit={props.onClose}>
                     <div className="indent_modal_div">
-                        <h2 className="modal_header">Hew build</h2>
+                        <h2 className="modal_header">New build</h2>
                         <FormInput name="commitHash" mask={false} labelText="Enter the commit hash which you want to build." important={false}
                                    placeholder="Commit hash" uniqueHash="3"
                                    cb={handleChange} type="search"/>
@@ -51,7 +52,7 @@ function Modal(props) {
                     </div>
                 </form>
             </div>
-        </div>
+        </div>, document.getElementById('root')
     )
 }
 
