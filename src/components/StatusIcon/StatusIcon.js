@@ -7,10 +7,8 @@ function StatusIcon(props) {
     switch (props.status) {
         case 'approved':
             return <Approved className="grid_top_icon"/>
-            break;
         case 'failed':
             return <Failed className="grid_top_icon"/>
-            break;
         default:
             return <Progress className="grid_top_icon"/>}
 }

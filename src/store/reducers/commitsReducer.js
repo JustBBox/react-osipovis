@@ -1,14 +1,15 @@
-export const store = [
-        {
-            id: '#2396',
-            status: 'approved',
-            message: 'Upgrade deps',
-            branch: 'master',
-            commitHash: '952e5567',
-            author: 'JustBBox',
-            date: '22 sep, 2021',
-            time: '1 ч 20 мин'
-        },
+//initial state
+const initialState = {
+    data: [{
+        id: '#2396',
+        status: 'approved',
+        message: 'Upgrade deps',
+        branch: 'master',
+        commitHash: '952e5567',
+        author: 'JustBBox',
+        date: '22 sep, 2021',
+        time: '1 ч 20 мин'
+    },
         {
             id: '#2376',
             status: 'progress',
@@ -88,60 +89,13 @@ export const store = [
             author: 'JustBBox',
             date: '13 apr, 2021',
             time: '1 ч 20 мин'
-        },
-        // {
-        //     id: '#630',
-        //     status: 'failed',
-        //     message: 'remove recursion',
-        //     branch: 'master',
-        //     commitHash: 'bda8df18',
-        //     author: 'JustBBox',
-        //     date: '4 apr, 2021',
-        //     time: '1 ч 20 мин'
-        // },
-        // {
-        //     id: '#459',
-        //     message: 'Edited gitignore',
-        //     branch: 'master',
-        //     commitHash: '0891352b',
-        //     author: 'JustBBox',
-        //     date: '24 mar, 2021',
-        //     time: '1 ч 20 мин'
-        // },
-        // {
-        //     id: '#412',
-        //     message: 'Added seed parameter. Updated readme',
-        //     branch: 'master',
-        //     commitHash: 'cbab94ff',
-        //     author: 'JustBBox',
-        //     date: '21 mar, 2021',
-        //     time: '1 ч 20 мин'
-        // },
-        // {
-        //     id: '#167',
-        //     message: 'Fix directories',
-        //     branch: 'master',
-        //     commitHash: 'd2c4d296',
-        //     author: 'JustBBox',
-        //     date: '13 feb, 2021',
-        //     time: '1 ч 20 мин'
-        // },
-        // {
-        //     id: '#141',
-        //     message: 'add readme',
-        //     branch: 'master',
-        //     commitHash: 'f0176544',
-        //     author: 'JustBBox',
-        //     date: '10 feb, 2021',
-        //     time: '1 ч 20 мин'
-        // },
-        // {
-        //     id: '#135',
-        //     message: 'Initial commit',
-        //     branch: 'master',
-        //     commitHash: 'ae9dc454',
-        //     author: 'JustBBox',
-        //     date: '9 feb, 2021',
-        //     time: '1 ч 20 мин'
-        // }
-]
+        }]
+};
+
+//reducer
+export function commitsReducer (state = initialState, action) {
+    return state;
+}
+
+// selectors
+export const getCommits = (state) => state.commits.data;

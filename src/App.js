@@ -1,22 +1,18 @@
-import React, {Component} from 'react';
-import AppContext from './app-context';
-
-import Header from './components/Header/Header';
-import InitRepository from './pages/InitRepository/InitRepository';
-import SettingsPage from "./pages/SettingsPage/SettingsPage";
-import CollectionRepresentation from "./pages/CollectionRepresentation/CollectionRepresentation";
-
-import Footer from './components/Footer/Footer';
-import './App.css';
-
+import React from 'react';
+import {connect, useSelector} from "react-redux";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
 
-import { store } from "./store";
-import Modal from "./components/Modal/Modal";
+import { ReduxedHeader } from './components/Header/Header';
+import { ReduxedModal } from "./components/Modal/Modal";
+import { ReduxedSettingsPage } from './pages/SettingsPage/SettingsPage';
+import { ReduxedInitRepository } from './pages/InitRepository/InitRepository';
+import {ReduxedCollectionRepresentation} from "./pages/CollectionRepresentation/CollectionRepresentation";
+import Footer from './components/Footer/Footer';
+import './App.css';
 
 export const DEFAULT_STATE = {
     path: '/',
@@ -28,47 +24,34 @@ export const DEFAULT_STATE = {
     commits: []
 };
 
-class App extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.handleState = this.handleState.bind(this);
-
-        this.state = Object.assign(DEFAULT_STATE);
-        this.state.handleState = this.handleState;
-    }
-
-    handleState(name, value) {
-        if(name === 'commits') {
-            //Mock data injected to the App state
-            value['commits'] = store;
-            this.setState(value)
-        } else {
-            this.setState({[name]: value});
-        }
-    }
-
-    render() {
-        return (
-            <Router>
-                <AppContext.Provider value={this.state} >
-                <div className="App">
-                    <Header handleState={this.handleState} titleText={this.state.repo}/>
-                    <div className="container">
-                        {/*<Modal/>*/}
-                        <Switch>
-                            <Route exact path="/" component={this.state.commits.length === 0 || this.state.repo === DEFAULT_STATE.repo ? InitRepository : CollectionRepresentation}/>
-                            <Route path="/settings" component={SettingsPage}/>
-                        </Switch>
-                    </div>
-                    <Modal onClose={() => this.handleState('show', false)} show={this.state.show}/>
-                    <Footer/>
+function App (props) {
+    const repo = useSelector(state => state.settings.repo);
+    const commits = useSelector(state => state.commits.data);
+    return (
+        <Router>
+            <div className="App">
+                <ReduxedHeader/>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={commits.length > 0 && repo !== DEFAULT_STATE.repo ? ReduxedCollectionRepresentation: ReduxedInitRepository}/>
+                        <Route path="/settings" component={ReduxedSettingsPage}/>
+                    </Switch>
                 </div>
-                </AppContext.Provider>
-            </Router>
-        );
-    }
+                <ReduxedModal/>
+                <Footer/>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
+
+const mapStateToProps = state => {
+    return {};
+};
+
+const mapDispatchToProps = dispatch => {
+    return {}
+};
+
+export const ReduxedApp = connect(mapStateToProps, mapDispatchToProps)(App);

@@ -4,12 +4,11 @@ import Button from '../../components/Button/Button';
 import { Link } from "react-router-dom";
 
 //Context Manipulation
-import React, { useContext } from "react";
-import AppContext from '../../app-context';
+import React from "react";
+import { DIRECT_TO_SETTINGS } from "../../store/actions/ActionTypes";
+import { connect } from "react-redux";
 
-function InitRepository(props) {
-    const { handleState } = useContext(AppContext);
-    const cb = () => handleState('path', '/settings');
+function InitRepository({ handleState }) {
 
     return (
         <div className="content">
@@ -17,15 +16,26 @@ function InitRepository(props) {
                 <DefaultSvg id="default_icon"/>
                 <p className="default_p">Configure repository connection<br/>and synchronization settings</p>
                 <Link className="unlink" to="/settings">
-                    <Button btnClass="btn_init yellow_btn" method={cb}>Open settings</Button>
+                    <Button btnClass="btn_init yellow_btn" method={handleState}>Open settings</Button>
                 </Link>
             </div>
         </div>
     );
 }
 
+
 export default InitRepository;
 
+const mapStateToProps = state => {
+    return {};
+};
 
+const mapDispatchToProps = dispatch => {
+    return {
+        handleState: () => dispatch({type: DIRECT_TO_SETTINGS})
+    }
+};
+
+export const ReduxedInitRepository = connect(mapStateToProps, mapDispatchToProps)(InitRepository);
 
 

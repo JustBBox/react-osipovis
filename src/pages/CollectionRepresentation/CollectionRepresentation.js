@@ -1,15 +1,13 @@
 import './CollectionRepresentation.css';
-import { ReactComponent as DefaultSvg } from '../../assets/default.svg';
 import Commit from '../../components/Commit/Commit';
-import { Link } from "react-router-dom";
 
 //Context Manipulation
-import React, { useContext } from "react";
-import AppContext from '../../app-context';
+import React from "react";
 import Button from "../../components/Button/Button";
+import {connect, useSelector} from "react-redux";
 
 function CollectionRepresentation(props) {
-    const { commits } = useContext(AppContext);
+    const commits = useSelector(state => state.commits.data);
     const commitsList = commits.map((value) =>
         <Commit data={value} key={value.commitHash}></Commit>
     );
@@ -22,3 +20,13 @@ function CollectionRepresentation(props) {
 }
 
 export default CollectionRepresentation;
+
+const mapStateToProps = state => {
+    return {};
+};
+
+const mapDispatchToProps = dispatch => {
+    return {}
+};
+
+export const ReduxedCollectionRepresentation = connect(mapStateToProps, mapDispatchToProps)(CollectionRepresentation);

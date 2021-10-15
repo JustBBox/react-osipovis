@@ -3,7 +3,6 @@ import { ReactComponent as TimeIcon } from '../../assets/code-commit.svg';
 import { ReactComponent as UserIcon } from '../../assets/user.svg';
 import { ReactComponent as Calendar } from '../../assets/calendar.svg';
 import { ReactComponent as Stopwatch } from '../../assets/stopwatch.svg';
-import { Link } from "react-router-dom";
 
 //Context Manipulation
 import StatusIcon from "../StatusIcon/StatusIcon";
