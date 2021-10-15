@@ -1,22 +1,30 @@
 # 15.10.2021
-Первая задача выполнена. Любые советы, что почитать, что улучшить, где<br>
-явное непонимание или неправильное использование пиши в тикете и/или в телеграм.
+Любые советы, что почитать, что улучшить, где явное непонимание или неправильное<br>
+использование пиши в тикете и/или в телеграм.
 
-I'll update that status on 15.10.2021 . Stay tuned for any additional information.<br>
 As cross-testing executor you could contact me in telegram: [Telegram Direct Link](https://t.me/EightBitBox) <br>
-Sorry for the delay in completing this task.
 
-## Для проверки используй следующие скрипы
-###Установи зависимости:
-#### `npm i`
+## Задачи
+1. Вёрстка + React находятся в ветке origin/task1
+2. Архитектура + Redux находятся в ветке origin/master
 
-### Запусти сервер с реактом:
-#### `npm start`
+## Для проверки первой задачи
+1. Клонируй репозиторий`git clone https://github.com/JustBBox/react-osipovis.git`
+2. Подтяни удаленные ветки `git fetch --all`
+3. Переключись на соответствующую ветку `git checkout -b task1 --track origin/task1`
+4. Установи зависимости `npm i`
+5. Запусти проект `npm start`
+
+
+## Для проверки второй задачи
+1. Клонируй репозиторий`git clone https://github.com/JustBBox/react-osipovis.git`
+2. Установи зависимости `npm i`
+3. Запусти проект `npm start`
+
+#Auto Generated stuff below
 
 # Getting Started with CI Server React App
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
-
-
 
 ## Available Scripts
 
